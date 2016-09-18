@@ -5,14 +5,14 @@ local action = function(msg, blocks)
 	local hash = 'chat:'..msg.chat.id..':links'
 	local text
 	
-	if blocks[1] == 'link' then
+	if blocks[1] == 'لینک' then
 		
-		local key = 'link'
+		local key = 'لینک'
 		local link = db:hget(hash, key)
 		
 		--check if link is nil or nul
 		if not link then
-			text = _("*No link* for this group. Ask the owner to generate one")
+			text = _("*لینکی ثبت نشده است ؛ لدفا لینک خود را ثبت کنید")
 		else
 			local title = msg.chat.title:escape_hard()
 			text = string.format('[%s](%s)', title, link)
@@ -27,7 +27,7 @@ local action = function(msg, blocks)
 			link = 'https://telegram.me/'..msg.chat.username
 		else
 			if not blocks[2] then
-				local text = _("This is not a *public supergroup*, so you need to write the link near /setlink")
+				local text = _("لینکی ثبت نشده ؛ لدفا از /setlink استفاده کنید")
 				api.sendReply(msg, text, true)
 				return
 			end
