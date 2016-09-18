@@ -27,7 +27,7 @@ local action = function(msg, blocks)
 			link = 'https://telegram.me/'..msg.chat.username
 		else
 			if not blocks[2] then
-				local text = _("از ./setlink استفاده کنید
+				local text = _("*./setlink استفاده کنید از")
 				api.sendReply(msg, text, true)
 				return
 			end
@@ -62,9 +62,9 @@ end
 return {
 	action = action,
 	triggers = {
-		config.cmd..'(link)$',
-		config.cmd..'(setlink)$',
-		config.cmd..'(setlink) https://telegram%.me/joinchat/(.*)',
-		config.cmd..'(setlink) (-)'
+		config.cmd..'(لینک)$',
+		config.cmd..'(تنظیم لینک)$',
+		config.cmd..'(تنظیم لینک) https://telegram%.me/joinchat/(.*)',
+		config.cmd..'(تنظیم لینم) (-)'
 	}
 }
