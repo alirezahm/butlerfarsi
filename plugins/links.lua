@@ -27,7 +27,7 @@ local action = function(msg, blocks)
 			link = 'https://telegram.me/'..msg.chat.username
 		else
 			if not blocks[2] then
-				local text = _("لینکی ثبت نشده ؛ لدفا از /setlink استفاده کنید")
+				local text = _("از ./setlink استفاده کنید
 				api.sendReply(msg, text, true)
 				return
 			end
