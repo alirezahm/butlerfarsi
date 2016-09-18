@@ -1,8 +1,8 @@
 local function get_helped_string(key)
 	if key == 'private' then
 		return _([[
-Hello *%s* 👋🏼, nice to meet you!
-I'm Group Butler, the first administration bot using the official Bot API.
+سلام خوش اومدی !
+ربات حرفه ای جهت کمک به مدیر و ادمین گروه
 
 *I can do a lot of cool stuffs*, here's a short list:
 • I can *kick or ban* users (even in normal groups) by reply / username
@@ -18,21 +18,21 @@ I work better if you add me to the group administrators (otherwise I won't be ab
 	elseif key == 'all' then
 		return _([[
 *Commands for all*:
-`/dashboard` : see all the group info from private
-`/rules` : show the group rules (via pm)
-`/about` : show the group description (via pm)
-`/adminlist` : show the moderators of the group (via pm)
-`/kickme` : get kicked by the bot
-`/echo [text]` : the bot will send the text back (with markdown, available only in private for non-admin users)
-`/info` : show some useful informations about the bot
-`/groups` : show the list of the discussion groups
-`/help` : show this message
+`/dashboard` : تنظیمات گروه
+`/rules` : قوانین گروه
+`/about` : درباره گروه
+`/adminlist` : نشان دادن ادمین های گروه
+`/kickme` : خارج شدن از گروه
+`/echo [text]` : ارسال پی ام به تمامی کابران گروه
+`/info` : ارسال تنظیمات و قوانین گروه
+`/groups` : نشان دادن گروه
+`/help` : راهنمایی
 ]])
 	elseif key == 'mods_info' then
 		return _([[
-*Moderators: info about the group*
+*Moderators: مشخصات گروه*
 
-`/setrules [group rules]` = set the new regulation for the group (the old will be overwritten).
+`/setrules [قوانین گروه]` = set the new regulation for the group (the old will be overwritten).
 `/setrules -` = delete the current rules.
 `/addrules [text]` = add some text at the end of the existing rules.
 `/setabout [group description]` = set a new description for the group (the old will be overwritten).
@@ -44,26 +44,26 @@ For a correct use of the markdown, check [this post](https://telegram.me/GroupBu
 ]])
 	elseif key == 'mods_banhammer' then
 		return _([[
-*Moderators: banhammer powers*
+*Moderators: آشنایی با موارد*
 
-`/kick [by reply|username]` = kick a user from the group (he can be added again).
-`/ban [by reply|username]` = ban a user from the group (also from normal groups).
-`/tempban [minutes]` = ban an user for a specific amount of minutes (minutes must be < 10.080, one week). For now, only by reply.
-`/unban [by reply|username]` = unban the user from the group.
-`/user [by reply|username|text mention|id]` = shows how many times the user has been banned *in all the groups*, and the warns received.
-`/status [username|id]` = show the current status of the user `(member|kicked/left the chat|banned|admin/creator|never seen)`
+`/kick [by reply|username]` = اخراج فرد خاطی از گروه.
+`/ban [by reply|username]` = بن کردن فرد خاطی از گروه.
+`/tempban [minutes]` = اخراج کردن با مدت زمان معیین.
+`/unban [by reply|username]` = بازگرداندن فرد بن شده.
+`/user [by reply|username|text mention|id]` = نشان دادن اطلاعات کاربر.
+`/status [username|id]` = نشان دادن مخشصات کاربر در گروه`
 ]])
 	elseif key == 'mods_flood' then
 		return _([[
-*Moderators: flood settings*
+*Moderators: تنظیم غیر مجاز*
 
-`/antiflood` = manage the flood settings in private, with an inline keyboard. You can change the sensitivity, the action (kick/ban), and even set some exceptions.
-`/antiflood [number]` = set how many messages a user can write in 5 seconds.
+`/antiflood` = مشخص کردن موارد غیرمجاز گروه.
+`/antiflood [number]` = مشخص کردن تعداد دفعات استفاده از موارد غیر مجاز در گروه.
 _Note_ : the number must be higher than 3 and lower than 26.
 ]])
 	elseif key == 'mods_media' then
 		return _([[
-*Moderators: media settings*
+*Moderators: تنظیمات مدیا*
 
 `/config` command, then `media` button = receive via private message an inline keyboard to change all the media settings.
 `/warnmax media [number]` = set the max number of warnings before be kicked/banned for have sent a forbidden media.
@@ -73,11 +73,11 @@ _Note_ : the number must be higher than 3 and lower than 26.
 ]])
 	elseif key == 'mods_welcome' then
 		return _([[
-*Moderators: welcome settings*
+*Moderators: تنظیم متن خوش آمد*
 
 `/menu` = receive in private the menu keyboard. You will find an option to enable/disable welcome and goodbye messages.
 
-*Custom welcome message*:
+*خوش آمدگویی در گروه*:
 `/welcome Welcome $name, enjoy the group!`
 Write after `/welcome` your welcome message. You can use some placeholders to include the name/username/id of the new member of the group
 Placeholders: _$username_ (will be replaced with the username); _$name_ (will be replaced with the name); _$id_ (will be replaced with the id); _$title_ (will be replaced with the group title).
@@ -123,17 +123,17 @@ When Rtl is not allowed (🚫), everyone that writes this character (or that has
 ]])
 	elseif key == 'mods_links' then
 		return _([[
-*Moderators: links*
+*Moderators: لینک*
 
-`/setlink [link|-]` : set the group link, so it can be re-called by other admins, or unset it.
-`/link` = get the group link, if already setted by the owner.
+`/setlink [link|-]` : تنظیم لینک برای گروه.
+`/link` = گرفتن لینک گروه.
 
 *Note*: the bot can recognize valid group links. If a link is not valid, you won't receive a reply.
 ]])
 	elseif key == 'mods_langs' then
 		return _([[
-*Moderators: group language*"
-`/lang` = choose the group language (can be changed in private too).
+*Moderators: تنظیم زبان*"
+`/lang` = تنظیم نموندن زبان ربات.
 
 *Note*: translators are volunteers, so I can't ensure the correctness of all the translations. And I can't force them to translate the new strings after each update (not translated strings are in english).
 
@@ -141,9 +141,9 @@ Anyway, translations are open to everyone. If you want to translate the bot, see
 ]])
 	elseif key == 'mods_settings' then
 		return _([[
-*Moderators: group settings*
+*Moderators: تنظیمات گروه*
 
-`/config` = manage the group settings in private with a comfortable inline keyboard.
+`/config` = تنظیمات کیبورد.
 The inline keyboard has three sub-menus:
 
 *Menu*: manage the most important group settings
@@ -161,16 +161,16 @@ local function make_keyboard(mod, mod_current_position)
 	if mod then --extra options for the mod
 	    local list = {
 	        [_("Banhammer")] = 'banhammer',
-	        [_("Group info")] = 'info',
-	        [_("Flood manager")] = 'flood',
-	        [_("Media settings")] = 'media',
-	        [_("Welcome settings")] = 'welcome',
-	        [_("General settings")] = 'settings',
-	        [_("Extra commands")] = 'extra',
-	        [_("Warns")] = 'warns',
-	        [_("Characters strictness")] = 'char',
-	        [_("Links")] = 'links',
-	        [_("Languages")] = 'lang'
+	        [_("مشخصات گروه")] = 'info',
+	        [_("موارد غیرمجاز")] = 'flood',
+	        [_("تنظیمات مدیا")] = 'media',
+	        [_("تنظیم خوش آمد)] = 'welcome',
+	        [_("تنضیمات کلی")] = 'settings',
+	        [_("سخن گو")] = 'extra',
+	        [_("اخطار")] = 'warns',
+	        [_("کارکتر")] = 'char',
+	        [_("لینک")] = 'links',
+	        [_("زبان")] = 'lang'
         }
         local line = {}
         for k,v in pairs(list) do
