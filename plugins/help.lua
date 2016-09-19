@@ -161,16 +161,16 @@ local function make_keyboard(mod, mod_current_position)
 	if mod then --extra options for the mod
 	    local list = {
 	        [_("Banhammer")] = 'banhammer',
-	        [_("مشخصات گروه")] = 'info',
-	        [_("موارد غیرمجاز")] = 'flood',
-	        [_("تنظیمات مدیا")] = 'media',
-	        [_("تنظیم خوش آمد)] = 'welcome',
-	        [_("تنضیمات کلی")] = 'settings',
-	        [_("سخن گو")] = 'extra',
-	        [_("اخطار")] = 'warns',
-	        [_("کارکتر")] = 'char',
-	        [_("لینک")] = 'links',
-	        [_("زبان")] = 'lang'
+	        [_("Group info")] = 'info',
+	        [_("Flood manager")] = 'flood',
+	        [_("Media settings")] = 'media',
+	        [_("Welcome settings")] = 'welcome',
+	        [_("General settings")] = 'settings',
+	        [_("Extra commands")] = 'extra',
+	        [_("Warns")] = 'warns',
+	        [_("Characters strictness")] = 'char',
+	        [_("Links")] = 'links',
+	        [_("Languages")] = 'lang'
         }
         local line = {}
         for k,v in pairs(list) do
