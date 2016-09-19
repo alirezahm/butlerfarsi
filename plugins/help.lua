@@ -160,17 +160,17 @@ local function make_keyboard(mod, mod_current_position)
 	keyboard.inline_keyboard = {}
 	if mod then --extra options for the mod
 	    local list = {
-	        [_("Banhammer")] = 'banhammer',
-	        [_("Group info")] = 'info',
-	        [_("Flood manager")] = 'flood',
-	        [_("Media settings")] = 'media',
-	        [_("Welcome settings")] = 'welcome',
-	        [_("General settings")] = 'settings',
-	        [_("Extra commands")] = 'extra',
-	        [_("Warns")] = 'warns',
-	        [_("Characters strictness")] = 'char',
-	        [_("Links")] = 'links',
-	        [_("Languages")] = 'lang'
+	        [_("Banhammer")] = 'گروه',
+	        [_("Group info")] = 'مشخصات گروه',
+	        [_("Flood manager")] = 'غیرمجاز',
+	        [_("Media settings")] = 'مدیا',
+	        [_("Welcome settings")] = 'خوش آمد',
+	        [_("General settings")] = 'تنظیمات',
+	        [_("Extra commands")] = 'سخن گو',
+	        [_("Warns")] = 'اخطار',
+	        [_("Characters strictness")] = 'کارکتر',
+	        [_("Links")] = 'لینک',
+	        [_("Languages")] = 'زبان'
         }
         local line = {}
         for k,v in pairs(list) do
